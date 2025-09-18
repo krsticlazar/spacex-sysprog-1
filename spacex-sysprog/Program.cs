@@ -23,7 +23,7 @@ public class Program
 
     private static AppSettings LoadSettings()
     {
-        var json = File.ReadAllText("AppSettings.cs");
+        var json = File.ReadAllText("AppSettings.json");
         var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         return JsonSerializer.Deserialize<AppSettings>(json, opts) ?? throw new Exception("AppSettings.json invalid");
     }
